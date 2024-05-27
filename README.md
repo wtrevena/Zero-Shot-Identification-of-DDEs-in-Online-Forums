@@ -3,6 +3,7 @@
 This project provides tools for classifying Drug Discontinuation Events (DDEs) using various models, including HuggingFace transformer models and GPT models. 
 
 ## Prerequisites
+This project requires datasets that are forthcoming from [Dryad](https://doi.org/10.5061/dryad.h44j0zps2). Please contact the authors for access.
 
 The project has been tested with Python 3.9.
 
