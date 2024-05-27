@@ -4,12 +4,13 @@ import logging
 import time
 import re
 
-import openai
+from openai import OpenAI
 import pandas as pd
 from tqdm import tqdm
 
 
 OPENAI_API_KEY = "TEST"
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 PROMPT_1_2 = """
 Your task as an AI model is to determine the probability that a given comment from medhelp.org entails a "Drug Discontinuation Event".
@@ -80,7 +81,7 @@ def parse_args():
 
 def run_model():
     args = parse_args()
-    openai.api_key = OPENAI_API_KEY
+
 
     model_name = args.model
     strategy = args.strategy
@@ -127,7 +128,7 @@ def run_model():
                 messages.append({"role": "user", "content": sentence})
                 for attempt in range(3):  # Number of attempts
                     try:
-                        chat_completion = openai.ChatCompletion.create(
+                        chat_completion = client.chat.completions.create(
                             model=args.model, messages=messages
                         )
                         answer = chat_completion.choices[0].message.content
