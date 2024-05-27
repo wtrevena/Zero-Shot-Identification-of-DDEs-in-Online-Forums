@@ -87,7 +87,7 @@ def run_model():
     logger.info(f"Parameters\n Model Name: {model_name} \n Strategy: {strategy}")
 
     logger.info("Reading input data")
-    data = pd.read_csv("data/ground_truth.csv.gz", compression="gzip")
+    data = pd.read_csv("./data/ground_truth.csv.gz", compression="gzip")
     logger.info(f"Row count: {len(data)}")
 
     output_columns = [
@@ -187,7 +187,7 @@ def run_model():
         ]
 
     logger.info("Classification finished. Preparing results")
-    output_path = f"{args.model}_cs{args.strategy}_cutoff{str(args.cutoff)}_medhelp_classified.csv"
+    output_path = f"DDE_detection/{args.model}_cs{args.strategy}_cutoff{str(args.cutoff)}_medhelp_classified.csv"
 
     logger.info(f"Writing output file to {output_path}")
     processed_data.to_csv(output_path, index=False)

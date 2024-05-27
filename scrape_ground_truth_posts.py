@@ -14,8 +14,8 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36',
 }
 
-data = pd.read_csv("ground_truth_URLs_only.csv.gz", compression="gzip")
-data2 = pd.read_csv("ground_truth_model_predictions_URLs_only.csv.gz", compression="gzip")
+data = pd.read_csv("data/ground_truth_URLs_only.csv.gz", compression="gzip")
+data2 = pd.read_csv("data/ground_truth_model_predictions_URLs_only.csv.gz", compression="gzip")
 
 data['text'] = np.nan
 data['text_sentences'] = np.nan
@@ -68,5 +68,5 @@ data3 = data[~pd.isna(data['text'])]
 data4 = data2[~pd.isna(data2['text'])]
 # Save the datasets with the scraped text to new CSV files
 # (These CSV files are used in the other scripts in this repository)
-data3.to_csv("ground_truth.csv.gz", compression="gzip", index=False)
-data4.to_csv("ground_truth_model_predictions.csv.gz", compression="gzip", index=False)
+data3.to_csv("data/ground_truth.csv.gz", compression="gzip", index=False)
+data4.to_csv("data/ground_truth_model_predictions.csv.gz", compression="gzip", index=False)
