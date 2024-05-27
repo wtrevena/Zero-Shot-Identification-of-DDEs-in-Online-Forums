@@ -1,3 +1,6 @@
-data/*
+DDE_detection/data/*
+DDE_detection/outputs/*
+DDE_root_cause_classification/data/*
+DDE_root_cause_classification/outputs/*
 my-venv/*
 my-venv

@@ -24,6 +24,7 @@ To ensure successful execution, the `ground_truth.csv.gz` file should be in the 
 Note that since posts on medhelp.org can be deleted, there may be posts in the `ground_truth.csv.gz` file that are no longer available. Similarly, there may be posts in the `HuggingFace_model_predictions.csv.gz` file that are no longer available. 
 
 
+
 ## Script Usage
 
 After executing either of the scripts, an output file is generated in the same directory. The naming convention for this file reflects the chosen model, strategy, and cutoff values. The file naming structure is as follows:
@@ -38,7 +39,7 @@ For example,
 python DDE_detection/HuggingFace_classifier.py --cutoff 0.9 --strategy 2 distilbert
 ```
 
-will produce an output file named `distilbert_cs2_cutoff0.9_medhelp_classified.csv` in the `DDE_detection` directory.
+will produce an output file named `distilbert_cs2_cutoff0.9_medhelp_classified.csv` in the `DDE_detection/outputs` directory.
 
 The `-h` or `--help` options are also available with each script to display a detailed explanation of the arguments and descriptions on the command line interface.
 
@@ -80,4 +81,4 @@ To evaluate the model and classification method metrics — accuracy, false posi
 python DDE_detection/verify_metrics.py
 ```
 
-Upon completion, a file named `metrics_df_verification.csv` will be generated in the DDE_detection directory, containing these metrics for further analysis. Note that these metrics may change over time as comments that have been deleted from medhelp.org are dropped from the dataset during the scraping process. As a result, there will be a slight misalignment between the metrics in the `metrics_df_verification.csv` file and the metrics calculated and presented in the paper associated with this work. As of 5/27/2024, 11 out of the 1000 original comments in the dataset have been deleted from medhelp.org, and as a result, the metrics in the `metrics_df_verification.csv` file will be slightly different than the metrics presented in the paper.
+Upon completion, a file named `metrics_df_verification.csv` will be generated in the `DDE_detection/outputs` directory, containing these metrics for further analysis. Note that these metrics may change over time as comments that have been deleted from medhelp.org are dropped from the dataset during the scraping process. As a result, there will be a slight misalignment between the metrics in the `metrics_df_verification.csv` file and the metrics calculated and presented in the paper associated with this work. As of 5/27/2024, 11 out of the 1000 original comments in the dataset have been deleted from medhelp.org, and as a result, the metrics in the `metrics_df_verification.csv` file will be slightly different than the metrics presented in the paper.

@@ -14,7 +14,7 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36',
 }
 
-data = pd.read_csv("\HuggingFace_model_predictions_URLs_only.csv.gz", compression="gzip")
+data = pd.read_csv("DDE_detection/data/HuggingFace_model_predictions_URLs_only.csv.gz", compression="gzip")
 
 data['text'] = np.nan
 data['text_sentences'] = np.nan
@@ -59,4 +59,4 @@ for i, row in data.iterrows():
 # Take a subset of the data which have a "text" which is not NA
 data2 = data[~pd.isna(data['text'])]
 # Save the dataset with the scraped text to a new CSV file
-data2.to_csv("HuggingFace_model_predictions.csv.gz", compression="gzip", index=False)
+data2.to_csv("DDE_detection/data/HuggingFace_model_predictions.csv.gz", compression="gzip", index=False)

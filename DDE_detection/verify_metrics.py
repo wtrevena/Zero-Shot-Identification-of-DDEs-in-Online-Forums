@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.metrics import confusion_matrix
 
 ground_truth_dataset = pd.read_csv(
-    r"data/ground_truth_model_predictions.csv.gz", compression="gzip"
+    r"DDE_detection/data/ground_truth_model_predictions.csv.gz", compression="gzip"
 )
 
 
@@ -191,4 +191,4 @@ for cutoff in cutoffs:
 
 print()
 print("Writing dataframe to metrics_df_verification.csv")
-metrics_df.to_csv(r"DDE_detection/metrics_df_verification.csv", index=False)
+metrics_df.to_csv(r"DDE_detection/outputs/metrics_df_verification.csv", index=False)
