@@ -17,12 +17,10 @@ pip install -r requirements.txt
 
 ## Data
 
-In order to utilize the code in this repository, you first need to download the datasets from the [Dryad repository]{https://doi.org/10.5061/dryad.h44j0zps2}, place them in a folder called `data` in the same repository as the scripts, and then run the `scrape_ground_truth_posts.py` script to generate the `ground_truth.csv.gz` file. In order to construct the `HuggingFace_model_predictions.csv.gz` dataframe which contains all of the classifications from the HuggingFace models, you will need to run the `scrape_all_classified_posts.py` script. 
+(Mandatory) In order to utilize the code in this repository, you first need to download the datasets `ground_truth_URLs_only.csv.gz` and `ground_truth_model_predictions_URLs_only.csv.gz` from the [Dryad repository]{https://doi.org/10.5061/dryad.h44j0zps2}, place them in a folder called `data` in this folder, and then run the `scrape_ground_truth_posts.py` script to generate the `ground_truth.csv.gz` file. To ensure successful execution, the `ground_truth.csv.gz` file should be in the `data` folder after running the `scrape_ground_truth_posts.py` script. Note that since posts on medhelp.org can be deleted, there may be posts in the `ground_truth.csv.gz` file that are no longer available.
 
-To ensure successful execution, the `ground_truth.csv.gz` file should be in the `data` folder after running the `scrape_ground_truth_posts.py` script. The `HuggingFace_model_predictions.csv.gz` file should be in the `data` folder after running the `scrape_all_classified_posts.py` script. 
 
-Note that since posts on medhelp.org can be deleted, there may be posts in the `ground_truth.csv.gz` file that are no longer available. Similarly, there may be posts in the `HuggingFace_model_predictions.csv.gz` file that are no longer available. 
-
+(Optional) In order to construct the `HuggingFace_model_predictions.csv.gz` dataframe which contains all of the classifications from the HuggingFace models, you will need to download the `HuggingFace_model_predictions_URLs_only.csv.gz` file from the [Dryad repository]{https://doi.org/10.5061/dryad.h44j0zps2}, place it in a folder called `data` in this folder, and then run the `scrape_all_classified_posts.py` script. The `HuggingFace_model_predictions.csv.gz` file should be in the `data` folder after running the `scrape_all_classified_posts.py` script. Similarly, there may be posts in the `HuggingFace_model_predictions.csv.gz` file that are no longer available. 
 
 
 ## Script Usage
