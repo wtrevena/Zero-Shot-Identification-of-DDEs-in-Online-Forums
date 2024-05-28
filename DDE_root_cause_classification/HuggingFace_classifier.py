@@ -18,10 +18,6 @@ MODELS = {
         "model_name": "cross-encoder/nli-deberta-base",
         "max_tokens": 512,
     },
-    # "distilbert": {
-    #     "model_name": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
-    #     "max_tokens": 512,
-    # }
 }
 
 logger = logging.getLogger(__name__)
@@ -90,7 +86,6 @@ def run_model():
 
     logger.info("Reading input data")
     data = pd.read_csv("./DDE_root_cause_classification/data/ground_truth.csv.gz", compression="gzip")
-    # data = data.head(2)
     logger.info(f"Row count: {len(data)}")
 
     output_columns = ["url", "text", "text_sentences"]
